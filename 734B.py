@@ -1,0 +1,10 @@
+a,b,c,d=map(int,input().split())
+s=0
+m=min(a,c,d)
+a-=m
+c-=m
+d-=m
+s=256*m
+m=min(a,b)
+s+=32*m
+print(s)
