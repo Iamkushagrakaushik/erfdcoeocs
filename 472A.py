@@ -1,5 +1,5 @@
 def is_prime(n):
-    """Check if a number is a prime number."""
+    """Check if a number is a prime number.    faster    """
     if n <= 1:
         return True
     if n <= 3:

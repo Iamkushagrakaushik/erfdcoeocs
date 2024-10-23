@@ -1,13 +1,17 @@
-t=int(input())
-l=[]
-for _ in range(t):
-    x,y=map(int,input().split())
-    if x>y:
-        a,b=y,x
-    else:
-        a,b=x,y
-    if 2*a>b:
-        b+=1
-    l.append(b**2)
-for i in l:
-    print(i)::::::
+def minimal_square_area(t, test_cases):
+    results = []
+    for a, b in test_cases:
+        side1 = max(a + a, b)  # Placing rectangles side by side horizontally
+        side2 = max(b + b, a)  # Placing rectangles side by side vertically
+        min_side = min(side1, side2)
+        results.append(min_side * min_side)  # Minimal square area
+    return results
+
+# Input reading and execution
+t = int(input())  # Number of test cases
+test_cases = [tuple(map(int, input().split())) for _ in range(t)]
+
+# Solve and print results
+results = minimal_square_area(t, test_cases)
+for result in results:
+    print(result)

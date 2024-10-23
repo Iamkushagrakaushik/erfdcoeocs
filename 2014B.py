@@ -1,13 +1,12 @@
 t=int(input())
 for _ in range(t):
     n,k=map(int,input().split())
-    c=0
-    e,o=0,0
-    for i in range(n-k+1,n+1):
-        if i%2==1:
-            o+=1
-        
-    if o%2==0:
-        print("NO")
+    a=(n+1)//2
+    b=(n-k+1)//2
+    c=a-b
+    if c%2==0:
+        print("YES")
     else:
-        print("YES"):       
+        print("NO")
+
+           

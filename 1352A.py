@@ -22,9 +22,7 @@ for i in range(len(a)):
     print()
 
 
-
-srxdgjndclnaljdclac{cfvhgbjhnkj;dfchgvjbhkb:fvgj{]adnckmlbhnj
-jnlkm
+'''the below code is gpt generated but above one also works '''
 
 
 
