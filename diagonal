@@ -1,0 +1,76 @@
+# Sample 5x5 matrix
+matrix = [
+    [7, 2, 4, 9, 5],
+    [1, 8, 3, 7, 6],
+    [5, 6, 1, 3, 8],
+    [4, 9, 7, 2, 1],
+    [3, 5, 2, 8, 7]
+]
+
+n = len(matrix)
+
+# Function to get diagonals parallel to the main diagonal
+def get_main_diagonals(matrix, n):
+    diagonals = []
+    
+    # Upper part diagonals (including main diagonal)
+    for start_col in range(n):
+        diagonal = []
+        row, col = 0, start_col
+        while col >= 0 and row < n:
+            diagonal.append(matrix[row][col])
+            row += 1
+            col -= 1
+        diagonals.append(diagonal)
+
+    # Lower part diagonals (below main diagonal)
+    for start_row in range(1, n):
+        diagonal = []
+        row, col = start_row, n - 1
+        while row < n and col >= 0:
+            diagonal.append(matrix[row][col])
+            row += 1
+            col -= 1
+        diagonals.append(diagonal)
+    
+    return diagonals
+
+# Function to get diagonals parallel to the anti-diagonal
+def get_anti_diagonals(matrix, n):
+    diagonals = []
+    
+    # Upper part diagonals (including anti-diagonal)
+    for start_col in range(n):
+        diagonal = []
+        row, col = 0, start_col
+        while row < n and col < n:
+            diagonal.append(matrix[row][col])
+            row += 1
+            col += 1
+        diagonals.append(diagonal)
+    
+    # Lower part diagonals (below anti-diagonal)
+    for start_row in range(1, n):
+        diagonal = []
+        row, col = start_row, 0
+        while row < n and col < n:
+            diagonal.append(matrix[row][col])
+            row += 1
+            col += 1
+        diagonals.append(diagonal)
+    
+    return diagonals
+
+# Get both sets of diagonals
+main_diagonals = get_main_diagonals(matrix, n)
+anti_diagonals = get_anti_diagonals(matrix, n)
+
+# Display the main diagonals
+print("Main Diagonals:")
+for i, diag in enumerate(main_diagonals):
+    print(f"Diagonal {i + 1}: {diag}")
+
+# Display the anti-diagonals
+print("\nAnti-Diagonals:")
+for i, diag in enumerate(anti_diagonals):
+    print(f"Diagonal {i + 1}: {diag}")
