@@ -61,16 +61,4 @@ def get_anti_diagonals(matrix, n):
     
     return diagonals
 
-# Get both sets of diagonals
-main_diagonals = get_main_diagonals(matrix, n)
-anti_diagonals = get_anti_diagonals(matrix, n)
 
-# Display the main diagonals
-print("Main Diagonals:")
-for i, diag in enumerate(main_diagonals):
-    print(f"Diagonal {i + 1}: {diag}")
-
-# Display the anti-diagonals
-print("\nAnti-Diagonals:")
-for i, diag in enumerate(anti_diagonals):
-    print(f"Diagonal {i + 1}: {diag}")

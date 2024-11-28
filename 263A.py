@@ -11,5 +11,5 @@ for i in range(5):
     if m:
         break
 print(abs(2-i)+abs(2-j))
-print(n)
-print(i,j)
+ 
+ 
