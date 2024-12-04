@@ -1,48 +1,12 @@
-;;;"""time limit exceeded 
+def syst(a,b,s):
+    if a==0:
+        return s
+    s+=str(a%b)+" "
+    return syst(a//b,b,s)    
 t=int(input())
 for _ in range(t):
     n,k=map(int,input().split())
-    if k==1 or k>n:
+    if k==1:
         print(n)
     else:
-        d={}
-        i=1
-        o=k
-        while True:
-            if k<=n:
-                d[i]=k
-                i+=1
-                k*=o
-          
-            
-            else:
-                break
-         
-        i=len(d)
-        c=0
-        while True:
-            if n==1:
-                c+=1
-                break
-            
-            if d[i]>n:
-                if i==1:
-                    c+=n
-                    break
-
-                i-=1
-            else:
-                n-=d[i]
-                c+=1
-                if n==0:
-                    break
-        print(c)
-"""
-
-
-
-
-
-
-            
-        
+        print(sum(map(int,syst(n,k,""))))
