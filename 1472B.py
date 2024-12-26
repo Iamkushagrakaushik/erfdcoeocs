@@ -1,18 +1,22 @@
 t=int(input())
-a=[]:qeawrsdtfygjhk
+
 for _ in range(t):
     m=int(input())
     n=list(map(int,input().split()))
-    x,y=0,0
-    for i in n:
-        if i==1:
-            x+=1
+    x,y=n.count(1),n.count(2)
+    y%=2
+    if y==1:
+        if x>1 and x%2==0:
+            print("YES")
         else:
-            y+=1
-    if x%2==1 or y%2==1:
-        a.append("NO")
+            print("NO")
     else:
-        a.append("YES")
+        if x%2==0:
+            print("YES")
+        else:
+            print("NO")
 
-for i in a:
-    print(i)
+     
+     
+
+ 
